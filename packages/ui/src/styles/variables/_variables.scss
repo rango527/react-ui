@@ -1,0 +1,15 @@
+// Font
+$fontFamily: "Roboto", sans-serif !default;
+$lineHeight: 1.5 !default;
+$units: px !default;
+
+// Easing
+$easingProps: background-color, border-color, color, box-shadow, opacity !default;
+$easingTime: 0.15s !default;
+$easingFunc: ease-in-out !default;
+$easingDelay: 0s !default;
+
+// Css vars
+:root {
+  --rcy-font-family: #{$fontFamily};
+}

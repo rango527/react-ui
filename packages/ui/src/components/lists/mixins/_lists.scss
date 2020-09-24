@@ -1,0 +1,36 @@
+@mixin size-list(
+  $spacingX,
+  $spacingY
+) {
+  &.#{$className}_spacedY .#{$className}__item {
+    padding-bottom: $spacingY;
+  }
+  &.#{$className}_spacedX .#{$className}__item {
+    padding-right: $spacingX;
+  }
+}
+
+@mixin sizes-list() {
+  @each $size, $set in $sizes {
+    &_#{$size} {
+      @include size-list(
+        $spacingX_md,
+        $spacingY_md
+      );
+    }
+  }
+}
+
+@mixin colorize-list() {
+
+}
+@mixin colorize-list-default {
+  @include colorize-list();
+}
+@mixin colorize-list-various() {
+  @each $style, $set in $colors {
+    &_#{$style} {
+      @include colorize-list();
+    }
+  }
+}

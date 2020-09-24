@@ -1,0 +1,126 @@
+// Sizes
+$fontSize_xs: 0.750rem;
+$fontSize_sm: 0.875rem;
+$fontSize_md: 1.000rem;
+$fontSize_lg: 1.250rem;
+$fontSize_xl: 1.500rem;
+
+$headingFontSize_xs: 1.000rem;
+$headingFontSize_sm: 1.250rem;
+$headingFontSize_md: 1.500rem;
+$headingFontSize_lg: 1.750rem;
+$headingFontSize_xl: 2.000rem;
+
+$spacingX_xs: 8px;
+$spacingX_sm: 10px;
+$spacingX_md: 12px;
+$spacingX_lg: 14px;
+$spacingX_xl: 16px;
+
+$spacingY_xs: 3px;
+$spacingY_sm: 5px;
+$spacingY_md: 7px;
+$spacingY_lg: 9px;
+$spacingY_xl: 11px;
+
+$elementWidth_xs: 80px;
+$elementWidth_sm: 100px;
+$elementWidth_md: 120px;
+$elementWidth_lg: 140px;
+$elementWidth_xl: 160px;
+
+$elementHeight_xs: 24px;
+$elementHeight_sm: 32px;
+$elementHeight_md: 40px;
+$elementHeight_lg: 48px;
+$elementHeight_xl: 56px;
+
+$borderRadius_xs: 2px;
+$borderRadius_sm: 3px;
+$borderRadius_md: 5px;
+$borderRadius_lg: 5px;
+$borderRadius_xl: 5px;
+
+$sizes: (
+  xs: 1,
+  sm: 1,
+  md: 1,
+  lg: 1,
+  xl: 1,
+);
+
+$fontSizes: (
+  xs: 0.750rem,
+  sm: 0.875rem,
+  md: 1.000rem,
+  lg: 1.250rem,
+  xl: 1.500rem
+);
+
+// Responsivity & Grid
+$breakpoints: (
+  desktop: 840px,
+  tablet: 600px,
+  phone: 0px,
+) !default;
+$columns: (
+  desktop: 12,
+  tablet: 8,
+  phone: 4,
+) !default;
+$default-margin: (
+  desktop: 24px,
+  tablet: 16px,
+  phone: 16px,
+) !default;
+$default-gutter: (
+  desktop: 24px,
+  tablet: 16px,
+  phone: 16px,
+) !default;
+$column-width: (
+  desktop: 72px,
+  tablet: 72px,
+  phone: 72px,
+) !default;
+
+// Css vars
+:root {
+  --rcy-fs-xs: #{$fontSize_xs};
+  --rcy-fs-sm: #{$fontSize_sm};
+  --rcy-fs-md: #{$fontSize_md};
+  --rcy-fs-lg: #{$fontSize_lg};
+  --rcy-fs-xl: #{$fontSize_xl};
+
+  --rcy-radius-xs: #{$borderRadius_xs};
+  --rcy-radius-sm: #{$borderRadius_sm};
+  --rcy-radius-md: #{$borderRadius_md};
+  --rcy-radius-lg: #{$borderRadius_lg};
+  --rcy-radius-xl: #{$borderRadius_xl};
+
+  --rcy-spacing-xs: #{$spacingX_xs};
+  --rcy-spacing-sm: #{$spacingX_sm};
+  --rcy-spacing-md: #{$spacingX_md};
+  --rcy-spacing-lg: #{$spacingX_lg};
+  --rcy-spacing-xl: #{$spacingX_xl};
+
+  --rcy-width-xs: var(--rcy-width-desktop-2);
+  --rcy-width-sm: var(--rcy-width-desktop-4);
+  --rcy-width-md: var(--rcy-width-desktop-6);
+  --rcy-width-lg: var(--rcy-width-desktop-8);
+  --rcy-width-xl: var(--rcy-width-desktop-12);
+
+  // Responsive
+  @each $size, $count in $columns {
+    $margin: map_get($default-margin, $size);
+    $gutter: map_get($default-gutter, $size);
+    $width: map_get($column-width, $size);
+    @for $n from 1 through $count {
+      --rcy-width-#{$size}-#{$n}: #{$n * ($width + $gutter)};
+    }
+    @include media-query($size) {
+      --rcy-margin: #{$margin};
+      --rcy-gutter: #{$gutter};
+    }
+  }
+}

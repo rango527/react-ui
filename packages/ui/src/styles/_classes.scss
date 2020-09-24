@@ -1,0 +1,13 @@
+.rcy {
+  &-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &-easing {
+    @include easing();
+  }
+  &-hidden {
+    display: none;
+  }
+}
