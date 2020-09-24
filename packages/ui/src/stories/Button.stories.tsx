@@ -4,7 +4,7 @@ import {Story, Meta} from '@storybook/react/types-6-0';
 import {Button, Interfaces} from '../components/buttons';
 
 export default {
-  title: 'ReacyUI/Button',
+  title: 'reactUI/Button',
   component: Button
 } as Meta;
 

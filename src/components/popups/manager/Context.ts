@@ -4,4 +4,4 @@ export const Context = createContext({
   popupManager: null
 });
 
-Context.displayName = 'ReacyUI_PopupsManagerContext';
+Context.displayName = 'reactUI_PopupsManagerContext';

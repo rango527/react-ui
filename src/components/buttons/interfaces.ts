@@ -1,6 +1,6 @@
 import {Core} from '../../common/interfaces';
 
-export namespace Buttons {
+export namespace Interfaces {
   export interface IStyledButton extends Core.IStyled {}
   export interface IButton extends Core.IStyled, Core.IComponent {
     onClick?: (e: any) => void;
